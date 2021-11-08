@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment1
+spec:
+  replicas: 96
+  selector:
+    matchLabels:
+      app: deployment1
+  template:
+    metadata:
+      labels:
+        app: deployment1
+    spec:
+      containers:
+      - name: job1
+        image: busybox
+        args: [/bin/sh, -c, 'i=0; while true; do echo "job1 $i: $(date)"; i=$((i+1)); sleep 1; done']
+        resources: {}

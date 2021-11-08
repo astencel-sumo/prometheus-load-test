@@ -1,0 +1,23 @@
+sumologic:
+  accessId: dummy
+  accessKey: dummy
+  endpoint: http://receiver-mock.receiver-mock:3000/terraform/api/
+
+  logs:
+    enabled: false
+
+fluentd:
+  events:
+    enabled: false
+
+  metrics:
+    autoscaling:
+      enabled: true
+      maxReplicas: 1000
+
+kube-prometheus-stack:
+  prometheus:
+    prometheusSpec:
+      scrapeInterval: "10s"
+      resources:
+        limits: null

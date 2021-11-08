@@ -1,0 +1,15 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: prometheus-load-test
+  tags:
+    author: astencel
+    created_date: "2021-11-06"
+  region: eu-west-1
+  version: "1.21"
+
+nodeGroups:
+- name: regular
+  instanceType: m4.4xlarge
+  desiredCapacity: 8
